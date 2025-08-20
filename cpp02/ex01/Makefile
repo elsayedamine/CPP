@@ -1,0 +1,16 @@
+NAME = float_x_int
+FLAGS = -Wall -Wextra -Werror
+SRCS = *.cpp
+CC = c++ -std=c++98 
+
+all: $(NAME)
+
+$(NAME): $(SRCS)
+	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+
+clean:
+	rm -rf $(NAME)
+
+fclean: clean
+
+re: fclean all
