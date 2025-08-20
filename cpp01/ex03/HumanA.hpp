@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/17 14:56:34 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 02:28:29 by aelsayed         ###   ########.fr       */
+/*   Created: 2025/08/18 23:53:06 by aelsayed          #+#    #+#             */
+/*   Updated: 2025/08/19 01:25:34 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANA_H
+# define HUMANA_H
 
-#ifndef CONTACT_H
-#define CONTACT_H
+#include <iostream>
+#include "Weapon.hpp"
 
-#include "main.hpp"
+typedef std::string str;
 
-class	Contact
+class	HumanA
 {
 	public:
-		Contact();
-		~Contact();
-
-		void	setName(str first);
-		void	setLast(str last);
-		void	setNick(str nick);
-		void	setPhone(str phone);
-		void	setSecret(str secret);
-		str		getName() const;
-		str		getLast() const;
-		str		getNick() const;
-		str		getPhone() const;
-		str		getSecret() const;
+		HumanA(const str &name, Weapon &weapon);
+		~HumanA();
+		void	attack(void) const;
 
 	private:
-		str	first;
-		str	last;
-		str	nick;
-		str	number;
-		str	secret;
+		str		name;
+		Weapon	&weapon;
 };
 
 #endif

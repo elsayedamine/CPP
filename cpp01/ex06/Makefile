@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = harlFilter
 FLAGS = -Wall -Wextra -Werror
-SRCS = megaphone.cpp
+SRCS = *.cpp
 CC = c++ -std=c++98 
 
 all: $(NAME)

@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/17 14:56:34 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 02:28:29 by aelsayed         ###   ########.fr       */
+/*   Created: 2025/08/18 23:53:06 by aelsayed          #+#    #+#             */
+/*   Updated: 2025/08/19 01:17:43 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WEAPON_H
+# define WEAPON_H
 
-#ifndef CONTACT_H
-#define CONTACT_H
+#include <iostream>
 
-#include "main.hpp"
+typedef std::string str;
 
-class	Contact
+class	Weapon
 {
 	public:
-		Contact();
-		~Contact();
-
-		void	setName(str first);
-		void	setLast(str last);
-		void	setNick(str nick);
-		void	setPhone(str phone);
-		void	setSecret(str secret);
-		str		getName() const;
-		str		getLast() const;
-		str		getNick() const;
-		str		getPhone() const;
-		str		getSecret() const;
+		Weapon(str name);
+		~Weapon();
+		const str		&getType() const;
+		void			setType(str type);
 
 	private:
-		str	first;
-		str	last;
-		str	nick;
-		str	number;
-		str	secret;
+		str	type;
 };
 
 #endif
