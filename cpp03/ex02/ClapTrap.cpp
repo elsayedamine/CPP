@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:02:43 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 18:26:07 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 17:11:40 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(const str &n) : name(n), Hits(10), Damage(0), Energy(10)
 	std::cout << std::setw(30) << "--------------------" << std::endl << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &src)
+ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	*this = src;
 	std::cout << "ClapTrap copy constructed from " << src.getName() << std::endl;
