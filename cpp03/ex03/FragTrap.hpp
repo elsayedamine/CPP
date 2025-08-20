@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:21:03 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 17:45:48 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:56:32 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class FragTrap : virtual public ClapTrap
 		FragTrap& operator=(const FragTrap &other);
 		~FragTrap();
 
-		void highFivesGuys();
+		void	highFivesGuys();
 };
 
 #endif

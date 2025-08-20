@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:33:56 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 18:12:07 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:47:58 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class DiamondTrap : virtual public FragTrap, virtual public ScavTrap
+class DiamondTrap : virtual public FragTrap , virtual public ScavTrap
 {
 	private:
 		str name;
@@ -30,7 +30,6 @@ class DiamondTrap : virtual public FragTrap, virtual public ScavTrap
 
 		using ScavTrap::attack;
 		str getName() const;
-
 		void whoAmI();
 };
 

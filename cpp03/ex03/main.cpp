@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:41:14 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 18:17:23 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:54:31 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,5 @@ int main()
 
 	return 0;
 }
+// attack damage need to be fixed
+

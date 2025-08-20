@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:22:07 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 17:24:48 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 19:56:36 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ FragTrap::FragTrap(const str &n) : ClapTrap(n)
 	std::cout << std::setw(30) << "--------------------" << std::endl << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &src)
+FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
 	*this = src;
 	std::cout << "FragTrap copy constructed from " << src.getName() << std::endl;

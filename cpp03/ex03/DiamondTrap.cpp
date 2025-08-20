@@ -6,13 +6,13 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:34:52 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 18:15:18 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:04:31 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap()
+DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap()
 {
 	setHits(FragTrap::getHits());
 	setEnergy(ScavTrap::getEnergy());
@@ -20,7 +20,7 @@ DiamondTrap::DiamondTrap() : ClapTrap()
 	std::cout << "Default DiamondTrap Constructor Called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const str &n) : ClapTrap(n + "_clap_name"), name(n)
+DiamondTrap::DiamondTrap(const str &n) : ClapTrap(n + "_clap_name"), FragTrap(n), name(n)
 {
 	setHits(FragTrap::getHits());
 	setEnergy(ScavTrap::getEnergy());
@@ -34,7 +34,7 @@ DiamondTrap::DiamondTrap(const str &n) : ClapTrap(n + "_clap_name"), name(n)
 	std::cout << std::setw(30) << "--------------------" << std::endl << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other.ClapTrap::getName()), name(other.name)
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other.ClapTrap::getName()), FragTrap(other), ScavTrap(other), name(other.name)
 {
     setHits(other.getHits());
     setEnergy(other.getEnergy());
@@ -44,15 +44,15 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other.ClapTrap::ge
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
-    if (this != &other)
-    {
-        ClapTrap::operator=(other);
-        this->name = other.name;
-        setHits(other.getHits());
-        setEnergy(other.getEnergy());
-        setDamage(other.getDamage());
-    }
-    return *this;
+	if (this != &other)
+	{
+		ClapTrap::operator=(other);
+		this->name = other.name;
+		setHits(other.getHits());
+		setEnergy(other.getEnergy());
+		setDamage(other.getDamage());
+	}
+	return *this;
 }
 
 str	DiamondTrap::getName() const

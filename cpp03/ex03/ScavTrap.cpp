@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 16:44:12 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 17:14:23 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:57:46 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::ScavTrap(const str &n) : ClapTrap(n)
 	std::cout << std::setw(30) << "--------------------" << std::endl << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src)
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
 	*this = src;
 	std::cout << "ScavTrap copy constructed from " << src.getName() << std::endl;
@@ -56,7 +56,7 @@ void	ScavTrap::attack(const str &target)
 	if (getEnergy() > 0 && getHits() > 0)
 	{
 		std::cout	<< "ScavTrap " << getName() << " fiercely attacks " 
-					<< target << ", causing " << getDamage() 
+					<< target << ", causing " << getDamage()
 					<< " points of damage!" << std::endl;
 		setEnergy(getEnergy() - 1);
 	}

@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 16:21:19 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 17:45:11 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/20 20:02:56 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
-
 
 class ScavTrap : virtual public ClapTrap
 {
