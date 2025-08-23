@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 23:16:32 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/18 23:35:58 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:47:17 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main()
 {
-	int	N = 5;
+	int	N =  21;
 
 	Zombie	*horde = zombieHorde(N, "Zombie");
 

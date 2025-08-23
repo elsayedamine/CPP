@@ -40,7 +40,6 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "format": "cpp",
-        "fstream": "cpp",
         "initializer_list": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",

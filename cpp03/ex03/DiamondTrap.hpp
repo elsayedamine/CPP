@@ -5,32 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 17:33:56 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 19:47:58 by aelsayed         ###   ########.fr       */
+/*   Created: 2025/08/23 12:05:11 by aelsayed          #+#    #+#             */
+/*   Updated: 2025/08/23 12:06:02 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
-# include "FragTrap.hpp"
-# include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class DiamondTrap : virtual public FragTrap , virtual public ScavTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 	private:
 		str name;
-
 	public:
 		DiamondTrap();
-		DiamondTrap(const DiamondTrap &other);
-		DiamondTrap(const str &name);
-		DiamondTrap &operator=(const DiamondTrap &other);
-		~DiamondTrap();
+		DiamondTrap(str namee);
+		DiamondTrap(const DiamondTrap& obj);
+		DiamondTrap& operator=(const DiamondTrap& obj);
 
-		using ScavTrap::attack;
-		str getName() const;
+		void attack(const str& target);
 		void whoAmI();
+		~DiamondTrap();
 };
 
 #endif

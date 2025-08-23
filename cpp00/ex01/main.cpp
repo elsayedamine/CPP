@@ -6,11 +6,12 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 15:25:56 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/18 15:15:31 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 18:02:05 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
+#include <limits> // Required for std::numeric_limits
 
 str	trim(const str &s)
 {
@@ -36,6 +37,14 @@ int	main()
 	{
 		std::cout << "Enter ADD, SEARCH, EXIT : ";
 		std::getline(std::cin, line);
+		// if(std::cin.fail() || std::cin.eof())
+		// {
+		// 	// std::cout << "lol" << std::endl;
+		// 	// std::cin.clear();
+		// 	// std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		// 	// // continue;
+		// 	// // exit(0);
+		// }
 		line = trim(line);
 		if (!line.compare(ADD))
 			phonebook.add_contact();

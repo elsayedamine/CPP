@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 16:25:22 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 11:36:09 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 13:58:22 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ void Fixed::setRawBits(int const raw)
 	this->value = raw;
 }
 
-std::ostream	&operator<<(std::ostream& os, const Fixed& obj)
+std::ostream	&operator<<(std::ostream& outputStreamer, const Fixed& obj)
 {
-    os << obj.toFloat();
-    return os;
+	outputStreamer << obj.toFloat();
+	return outputStreamer;
 }
 
 /*------------Operators------------*/

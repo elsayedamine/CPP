@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:22:07 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 19:56:36 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 12:23:17 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ FragTrap::FragTrap() : ClapTrap()
 	setHits(100);
 	setEnergy(100);
 	setDamage(30);
+	personal_damage = 30;
 	std::cout << "Default FragTrap Constructor Called" << std::endl;
 }
 
@@ -25,6 +26,7 @@ FragTrap::FragTrap(const str &n) : ClapTrap(n)
 	setHits(100);
 	setEnergy(100);
 	setDamage(30);
+	personal_damage = 30;
 	std::cout << "FragTrap \"" << getName() << "\" was created with :" << std::endl;
 	std::cout << std::setw(30) << "--------------------" << std::endl;
 	std::cout << std::setw(27) << "HP : " << getHits() << std::endl;
@@ -55,4 +57,9 @@ void FragTrap::highFivesGuys()
 {
 	std::cout << "FragTrap " << getName()
 			  << " requests a positive high five!" << std::endl;
+}
+
+int FragTrap::getCopyDamage()
+{
+	return this->personal_damage;
 }

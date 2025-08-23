@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 16:44:12 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 18:57:46 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 12:13:36 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	setHits(100);
-	setEnergy(50);
-	setDamage(20);
 	std::cout << "Default ScavTrap Constructor Called" << std::endl;
 }
 
@@ -25,6 +22,7 @@ ScavTrap::ScavTrap(const str &n) : ClapTrap(n)
 	setHits(100);
 	setEnergy(50);
 	setDamage(20);
+	personal_energy = 50;
 	std::cout << "ScavTrap \"" << getName() << "\" was created with :" << std::endl;
 	std::cout << std::setw(30) << "--------------------" << std::endl;
 	std::cout << std::setw(27) << "HP : " << this->getHits() << std::endl;
@@ -33,7 +31,7 @@ ScavTrap::ScavTrap(const str &n) : ClapTrap(n)
 	std::cout << std::setw(30) << "--------------------" << std::endl << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
+ScavTrap::ScavTrap(const ScavTrap &src)
 {
 	*this = src;
 	std::cout << "ScavTrap copy constructed from " << src.getName() << std::endl;
@@ -56,7 +54,7 @@ void	ScavTrap::attack(const str &target)
 	if (getEnergy() > 0 && getHits() > 0)
 	{
 		std::cout	<< "ScavTrap " << getName() << " fiercely attacks " 
-					<< target << ", causing " << getDamage()
+					<< target << ", causing " << getDamage() 
 					<< " points of damage!" << std::endl;
 		setEnergy(getEnergy() - 1);
 	}
@@ -68,4 +66,9 @@ void	ScavTrap::attack(const str &target)
 void	ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << getName() << " has entered Gate Keeper mode!" << std::endl;
+}
+
+int		ScavTrap::getCopyEnergy()
+{
+	return (this->personal_energy);
 }

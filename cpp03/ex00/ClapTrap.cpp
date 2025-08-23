@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:02:43 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 18:26:07 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 11:17:29 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	ClapTrap::attack(const str &target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if (this->Hits <= 0)
+		return (std::cout << "ClapTrap " << this->name << " is dead!\n", (void)amount);
 	std::cout	<< "ClapTrap " << this->name
 				<< " was attacked causing "
 				<< amount

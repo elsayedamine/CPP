@@ -20,9 +20,13 @@
 #include <iomanip>
 #include <cstdlib>
 
-class Account
+// classes defines what it means to be an object
+// so an account is considered an account only if it has the properites of this class for example
+// we can consier also that the classes re the blueprint and the instances are the houses built using this blueprint
+// Classes allow us to group variables into a user-defined type and also add functionality to those variables
+class Account // user defined object/type
 {
-	public:
+	public: // access specifier
 
 		typedef Account		t;
 

@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 16:44:12 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 17:14:23 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/21 21:02:33 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	setHits(100);
-	setEnergy(50);
-	setDamage(20);
 	std::cout << "Default ScavTrap Constructor Called" << std::endl;
 }
 

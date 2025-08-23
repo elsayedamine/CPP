@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 17:21:03 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 19:56:32 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 11:36:44 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 class FragTrap : virtual public ClapTrap
 {
+	private:
+		int	personal_damage;
 	public:
 		FragTrap();
 		FragTrap(const FragTrap &other);
@@ -25,6 +27,7 @@ class FragTrap : virtual public ClapTrap
 		~FragTrap();
 
 		void	highFivesGuys();
+		int		getCopyDamage();
 };
 
 #endif

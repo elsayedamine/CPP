@@ -1,6 +1,7 @@
 NAME = ZombieHorde
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror 
 SRCS = *.cpp
+
 CC = c++ -std=c++98 
 
 all: $(NAME)

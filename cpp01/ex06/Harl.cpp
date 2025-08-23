@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 03:25:44 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 03:39:45 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 19:00:44 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ void	Harl::complain(str level)
 		&Harl::error,
 		&Harl::unknown
 	};
+
+	std::cout << fcts[0] << std::endl;
+	std::cout << fcts[1] << std::endl;
+	std::cout << fcts[2] << std::endl;
+	std::cout << fcts[3] << std::endl;
+	
 	str	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	int i = 0;

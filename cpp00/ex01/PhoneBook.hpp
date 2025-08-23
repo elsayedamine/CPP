@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 14:58:29 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/18 15:19:12 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:45:41 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 
 class	PhoneBook
 {
+	private:
+		int			curr_contact;
+		int			nb_contacts;
+		Contact		array[8];
 	public:
 		PhoneBook();
 		~PhoneBook();
@@ -24,10 +28,6 @@ class	PhoneBook
 		void	add_contact();
 		void	search_contact();
 
-	private:
-		int			curr_contact;
-		int			nb_contacts;
-		Contact		array[8];
 
 };
 

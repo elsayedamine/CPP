@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 14:56:57 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 19:43:22 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 11:45:41 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef std::string str;
 
 class ClapTrap
 {
-	private:
+	protected:
 		str	name;
 		int	Hits;
 		int	Damage;
@@ -31,7 +31,7 @@ class ClapTrap
 		ClapTrap(const ClapTrap &other);
 		ClapTrap(str const &name);
 		ClapTrap& operator=(const ClapTrap& other);
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		virtual void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);

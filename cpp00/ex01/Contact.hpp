@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 14:56:34 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 02:28:29 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/23 17:44:43 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 class	Contact
 {
+	private:
+		str	first;
+		str	last;
+		str	nick;
+		str	number;
+		str	secret;
 	public:
 		Contact();
 		~Contact();
@@ -33,12 +39,6 @@ class	Contact
 		str		getPhone() const;
 		str		getSecret() const;
 
-	private:
-		str	first;
-		str	last;
-		str	nick;
-		str	number;
-		str	secret;
 };
 
 #endif
