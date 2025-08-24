@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 14:58:29 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/23 17:45:41 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 09:47:48 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ class	PhoneBook
 
 		void	add_contact();
 		void	search_contact();
-
-
 };
+
+int	isValidPhone(const str &s);
+int	isPrintableString(const str &s);
+
 
 #endif

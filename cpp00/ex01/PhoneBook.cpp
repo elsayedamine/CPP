@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 15:26:23 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/18 17:04:13 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 09:51:20 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,36 @@
 
 PhoneBook::PhoneBook() :  curr_contact(0), nb_contacts(0)
 {
-	return ;
+
 }
 
 PhoneBook::~PhoneBook()
 {
-	return ;
+
+}
+
+int	isPrintableString(const str &s)
+{
+	size_t i = -1;
+	size_t len = s.size();
+	while (++i < len)
+		if (!isprint((unsigned char)(s[i])))
+			return 0;
+	return 1;
+}
+
+int	isValidPhone(const str &s)
+{
+	if (s.empty() || s.length() > 15)
+		return 0;
+	size_t i = 0;
+	if (s[0] == '+')
+		i++;
+	size_t len = s.size();
+	while (++i < len)
+		if (!isdigit((unsigned char)(s[i])))
+			return 0;
+	return 1;
 }
 
 void	PhoneBook::add_contact()
@@ -34,12 +58,16 @@ void	PhoneBook::add_contact()
 
 	if (this->curr_contact == 8)
 		this->curr_contact = 0;
-	for(int i = 0; i < 5; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		std::cout << msg[i];
 		std::getline(std::cin, arr[i]);
-		if (!arr[i].c_str() || !*arr[i].c_str())
-			return (std::cout << "A contact can't have empty fields.\n",(void)arr);
+		if(std::cin.fail() || std::cin.eof())
+			return (std::cerr << "Stream Failure\n", exit(1));
+		if (arr[i].empty() || !isPrintableString(arr[i]))
+			return (std::cout << "Invalid: non-printable or empty input.\n", (void)arr);
+		if (i == 3 && !isValidPhone(arr[i]))
+			return (std::cout << "Invalid phone number format.\n", (void)arr);
 	}
 	this->array[this->curr_contact].setName(arr[0]);
 	this->array[this->curr_contact].setLast(arr[1]);
@@ -86,6 +114,8 @@ void	PhoneBook::search_contact()
 	}
 	std::cout << "Type a contact's index to display their personal informations : ";
 	std::getline(std::cin, result);
+	if(std::cin.fail() || std::cin.eof())
+		return (std::cerr << "Stream Failure\n", exit(1));
 	int index = atoi(result.c_str());
 	if ((index > 7 || index < 0) || (index == 0 && !result[0]))
 		return (std::cout << "Please enter a valid digit (1-8)!\n" , (void)index);

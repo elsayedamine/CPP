@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 17:12:53 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/18 18:24:40 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 11:50:03 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	Account::displayAccountsInfos(void)
 				<< Account::getNbAccounts()
 				<< ";total:"
 				<< Account::getTotalAmount()
-				<< ";diposits:"
+				<< ";deposits:"
 				<< Account::getNbDeposits()
 				<< ";withdrawals:"
 				<< Account::getNbWithdrawals()
