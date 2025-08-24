@@ -56,11 +56,6 @@ void	Harl::complain(str level)
 		&Harl::error,
 		&Harl::unknown
 	};
-
-	std::cout << fcts[0] << std::endl;
-	std::cout << fcts[1] << std::endl;
-	std::cout << fcts[2] << std::endl;
-	std::cout << fcts[3] << std::endl;
 	
 	str	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
