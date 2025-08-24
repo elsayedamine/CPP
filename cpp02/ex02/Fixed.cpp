@@ -6,13 +6,11 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 16:25:22 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 18:26:30 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 17:20:30 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-// Copy constructor = used when creating a new object from another.
-// Copy assignment operator = used when overwriting an existing object.
 /*------------Constructions------------*/
 Fixed::Fixed() : value(0)
 {
@@ -24,7 +22,7 @@ Fixed::Fixed(const Fixed &other)
 }
 Fixed::Fixed(const int number)
 {
-	this->value = number << this->fractionalBits;
+	this->value = number * (1 << fractionalBits);;
 }
 Fixed::Fixed(const float number)
 {
@@ -95,21 +93,31 @@ bool 	Fixed::operator!=(const Fixed& other) const
 // 	Arithmetic operators
 Fixed 	Fixed::operator+(const Fixed& other) const
 {
-	return (Fixed(this->value + other.value));
+	Fixed result;
+	result.value = this->value + other.value;
+	return result;
 }
 Fixed 	Fixed::operator-(const Fixed& other) const
 {
-	return (Fixed(this->value - other.value));
+    Fixed result;
+    result.value = this->value - other.value;
+    return result;
 }
 Fixed	Fixed::operator*(const Fixed& other) const
 {
-	return (Fixed(this->toFloat() * other.toFloat()));
+    Fixed result;
+    long tmp = (long)this->value * (long)other.value;
+    result.value = (int)(tmp >> this->fractionalBits);
+    return result;
 }
 Fixed	Fixed::operator/(const Fixed& other) const
 {
 	if (other.getRawBits() == 0)
 		return (Fixed(0));
-	return (Fixed(this->toFloat() / other.toFloat()));
+    Fixed result;
+    long tmp = ((long)this->value << this->fractionalBits) / other.value;
+    result.value = (int)tmp;
+    return result;
 }
 
 // 	Increment / Decrement operators

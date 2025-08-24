@@ -6,13 +6,11 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 16:25:22 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 18:26:44 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 16:54:17 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-// Copy constructor = used when creating a new object from another.
-// Copy assignment operator = used when overwriting an existing object.
 
 Fixed::Fixed() : value(0)
 {
@@ -60,6 +58,6 @@ void Fixed::setRawBits(int const raw)
 
 std::ostream	&operator<<(std::ostream& os, const Fixed& obj)
 {
-    os << obj.toFloat();
-    return os;
+	os << obj.toFloat();
+	return os;
 }

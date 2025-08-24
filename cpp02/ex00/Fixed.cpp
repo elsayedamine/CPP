@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 16:25:22 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 17:02:50 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 16:48:45 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed	&Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
-		this->value = other.value;
+		this->value = other.getRawBits();
 	return (*this);
 }
 
@@ -46,6 +46,3 @@ void Fixed::setRawBits(int const raw)
 {
 	this->value = raw;
 }
-
-// Copy constructor = used when creating a new object from another.
-// Copy assignment operator = used when overwriting an existing object.

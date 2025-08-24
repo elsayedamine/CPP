@@ -6,12 +6,11 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 16:25:22 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/23 13:58:22 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 17:20:30 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-// Copy constructor = used when creating a new object from another.
 /*------------Constructions------------*/
 Fixed::Fixed() : value(0)
 {
@@ -23,7 +22,7 @@ Fixed::Fixed(const Fixed &other)
 }
 Fixed::Fixed(const int number)
 {
-	this->value = number << this->fractionalBits;
+	this->value = number * (1 << fractionalBits);;
 }
 Fixed::Fixed(const float number)
 {
@@ -38,7 +37,7 @@ Fixed::~Fixed()
 Fixed	&Fixed::operator=(const Fixed &other)
 {
 	if (this != &other)
-		this->value = other.getRawBits();
+	this->value = other.getRawBits();
 	return (*this);
 }
 float	Fixed::toFloat(void) const
@@ -58,10 +57,10 @@ void Fixed::setRawBits(int const raw)
 	this->value = raw;
 }
 
-std::ostream	&operator<<(std::ostream& outputStreamer, const Fixed& obj)
+std::ostream	&operator<<(std::ostream& os, const Fixed& obj)
 {
-	outputStreamer << obj.toFloat();
-	return outputStreamer;
+    os << obj.toFloat();
+    return os;
 }
 
 /*------------Operators------------*/
@@ -95,22 +94,30 @@ bool 	Fixed::operator!=(const Fixed& other) const
 Fixed 	Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
-	result.setRawBits(this->value + other.value);
-	return (result);
+	result.value = this->value + other.value;
+	return result;
 }
 Fixed 	Fixed::operator-(const Fixed& other) const
 {
-	Fixed result;
-	result.setRawBits(this->value - other.value);
-	return (result);
+    Fixed result;
+    result.value = this->value - other.value;
+    return result;
 }
 Fixed	Fixed::operator*(const Fixed& other) const
 {
-	return Fixed((this->value * other.value) >> fractionalBits);
+    Fixed result;
+    long tmp = (long)this->value * (long)other.value;
+    result.value = (int)(tmp >> this->fractionalBits);
+    return result;
 }
 Fixed	Fixed::operator/(const Fixed& other) const
 {
-	return Fixed((this->value << fractionalBits) / other.value);
+	if (other.getRawBits() == 0)
+		return (Fixed(0));
+    Fixed result;
+    long tmp = ((long)this->value << this->fractionalBits) / other.value;
+    result.value = (int)tmp;
+    return result;
 }
 
 // 	Increment / Decrement operators

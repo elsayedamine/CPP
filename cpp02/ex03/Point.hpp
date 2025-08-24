@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 18:32:46 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 10:51:49 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 14:36:22 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Point
 	private:
 		const Fixed	x;
 		const Fixed	y;
-		// i'll add something maybe
+
 	public:
 		Point();
 		~Point();
@@ -31,7 +31,6 @@ class Point
 		Point& operator=(const Point& other);
 		Fixed getX() const;
 		Fixed getY() const;
-		// i'll add something maybe
 		bool 	operator==(const Point& other) const;
 
 };

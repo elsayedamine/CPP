@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 18:32:41 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/20 12:01:41 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 17:40:16 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ Point sub(const Point &v1, const Point &v2)
 Fixed	cross(const Point &a, const Point &b)
 {
 	return (a.getX() * b.getY() - a.getY() * b.getX());
-}
-
-Fixed abs(const Fixed &f)
-{
-	return (f < Fixed(0) ? f * -1 : f);
 }
 
 bool	bsp(Point const a, Point const b, Point const c, Point const p)

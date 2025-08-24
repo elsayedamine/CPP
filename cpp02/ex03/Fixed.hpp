@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 03:46:49 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/19 18:01:00 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/08/24 17:33:33 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,8 @@ class Fixed
 		static const Fixed	&min(const Fixed &a, const Fixed &b);
 		static Fixed		&max(Fixed &a, Fixed &b);
 		static const Fixed	&max(const Fixed &a, const Fixed &b);
-
-
-};
-
+	};
+	
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-
 
 #endif
