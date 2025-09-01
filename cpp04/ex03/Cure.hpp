@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 16:12:48 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/31 16:18:10 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/09/01 17:29:14 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Cure : public AMateria
 		Cure();
 		Cure(const Cure& other);
 		Cure& operator=(const Cure& other);
-		virtual ~Cure();
+		~Cure();
 
-		virtual AMateria* clone() const;
-		virtual void use(ICharacter& target);
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

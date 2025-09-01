@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 15:46:19 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/31 16:30:19 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/09/01 16:03:51 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 
 # include <iostream>
 # include <string>
-# include "ICharacter.hpp"
-# include "Ice.hpp"
-# include "Cure.hpp"
 
 typedef std::string str;
+
+class ICharacter;
 
 class AMateria
 {

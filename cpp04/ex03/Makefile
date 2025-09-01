@@ -1,6 +1,6 @@
 NAME = Interfaces
 FLAGS = -Wall -Wextra -Werror
-SRCS =  main.cpp AMateria.cpp
+SRCS =  AMateria.cpp Cure.cpp  ICharacter.cpp main.cpp Character.cpp Ice.cpp IMateriaSource.cpp MateriaSource.cpp
 
 CC = c++ -std=c++98 
 

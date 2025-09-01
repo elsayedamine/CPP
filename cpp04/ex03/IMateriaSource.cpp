@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/31 15:50:27 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/09/01 16:00:42 by aelsayed         ###   ########.fr       */
+/*   Created: 2025/09/01 15:36:15 by aelsayed          #+#    #+#             */
+/*   Updated: 2025/09/01 15:41:51 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "IMateriaSource.hpp"
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
-
-# include <string>
-
-typedef std::string str;
-class AMateria;
-
-class ICharacter
+IMateriaSource::~IMateriaSource()
 {
-	public:
-		virtual str const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-		virtual ~ICharacter();
-};
+    
+}
 
-#endif

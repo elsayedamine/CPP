@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 16:29:27 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/08/31 16:39:21 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/09/01 16:01:24 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ str const & AMateria::getType() const
 }
 void	AMateria::use(ICharacter& target)
 {
-	
+	(void)target;
 }
