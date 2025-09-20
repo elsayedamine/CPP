@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/20 03:45:39 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/09/20 06:49:19 by aelsayed         ###   ########.fr       */
+/*   Created: 2025/09/20 22:00:56 by aelsayed          #+#    #+#             */
+/*   Updated: 2025/09/20 22:02:30 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,51 +15,64 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <iostream>
+#include "Intern.hpp"
 
 int main()
 {
-	try
-	{
-		Bureaucrat john("John", 1);
-		Bureaucrat jim("Jim", 150);
+    try
+    {
+        std::cout << "=== Bureaucrat creation ===" << std::endl;
+        Bureaucrat alice("Alice", 2);
+        Bureaucrat bob("Bob", 149);
+        Bureaucrat boss("Boss", 1);
 
-		ShrubberyCreationForm shrub("home");
-		RobotomyRequestForm robot("Bob");
-		PresidentialPardonForm pardon("Alice");
+        std::cout << alice << std::endl;
+        std::cout << bob << std::endl;
+        std::cout << boss << std::endl;
 
-		std::cout << shrub << std::endl;
-		std::cout << robot << std::endl;
-		std::cout << pardon << std::endl;
+        std::cout << "\n=== Form creation ===" << std::endl;
+        ShrubberyCreationForm shrub("garden");
+        RobotomyRequestForm robo("Bender");
+        PresidentialPardonForm pardon("Marvin");
 
-		jim.signForm(shrub);
-		john.signForm(shrub);
-		john.signForm(robot);
-		john.signForm(pardon);
+        std::cout << shrub << std::endl;
+        std::cout << robo << std::endl;
+        std::cout << pardon << std::endl;
 
-		// Attempt to execute
-		try
-		{
-			jim.executeForm(shrub);
-		}
-		catch (const std::exception & e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+        std::cout << "\n=== Signing forms ===" << std::endl;
+        bob.signForm(shrub);     // too low
+        alice.signForm(shrub);   // success
 
-		john.executeForm(shrub);
-		john.executeForm(robot);
-		john.executeForm(pardon);
+        bob.signForm(robo);      // fail
+        boss.signForm(robo);     // success
 
-		// Print final forms
-		std::cout << shrub << std::endl;
-		std::cout << robot << std::endl;
-		std::cout << pardon << std::endl;
-	}
-	catch (const std::exception & e)
-	{
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
+        alice.signForm(pardon);  // fail
+        boss.signForm(pardon);   // success
 
-	return 0;
+        std::cout << "\n=== Executing forms ===" << std::endl;
+        try { alice.executeForm(shrub);} catch (std::exception& e) { std::cerr << e.what() << std::endl; }
+        try { boss.executeForm(robo); }  catch (std::exception& e) { std::cerr << e.what() << std::endl; }
+        try { boss.executeForm(pardon);} catch (std::exception& e) { std::cerr << e.what() << std::endl; }
+
+        std::cout << "\n=== Intern creating forms ===" << std::endl;
+        Intern someRandomIntern;
+        AForm* f1 = someRandomIntern.makeForm("shrubbery creation", "backyard");
+        AForm* f2 = someRandomIntern.makeForm("robotomy request", "HAL9000");
+        AForm* f3 = someRandomIntern.makeForm("presidential pardon", "Arthur Dent");
+
+        if (f1) { boss.signForm(*f1); boss.executeForm(*f1); delete f1; }
+        if (f2) { boss.signForm(*f2); boss.executeForm(*f2); delete f2; }
+        if (f3) { boss.signForm(*f3); boss.executeForm(*f3); delete f3; }
+
+        std::cout << "\n=== Intern creating invalid form ===" << std::endl;
+        AForm* f4 = someRandomIntern.makeForm("invalid nonsense", "Nobody");
+        if (!f4)
+            std::cout << "Intern couldn’t create that form.\n";
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << "Fatal exception: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

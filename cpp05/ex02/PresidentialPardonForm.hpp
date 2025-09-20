@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 20:25:50 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/09/20 07:06:35 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/09/20 23:02:38 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(const std::string& target);
 		PresidentialPardonForm(const PresidentialPardonForm& other);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
-		virtual ~PresidentialPardonForm();
+		~PresidentialPardonForm();
 };
 
 #endif

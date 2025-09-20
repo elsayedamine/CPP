@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 20:25:44 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/09/20 07:06:33 by aelsayed         ###   ########.fr       */
+/*   Updated: 2025/09/20 23:02:35 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(const std::string& target);
 		RobotomyRequestForm(const RobotomyRequestForm& other);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
-		virtual ~RobotomyRequestForm();
+		~RobotomyRequestForm();
 };
 
 #endif
