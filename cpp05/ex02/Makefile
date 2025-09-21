@@ -1,19 +1,21 @@
 NAME = executors
-FLAGS = -Wall -Wextra -Werror
+
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
 SRCS =	AForm.cpp main.cpp RobotomyRequestForm.cpp Bureaucrat.cpp \
 		PresidentialPardonForm.cpp  ShrubberyCreationForm.cpp
-
-
-CC = c++ -std=c++98 
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-	rm -rf $(NAME)
+	rm -f $(OBJS)
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
