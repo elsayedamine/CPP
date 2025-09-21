@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 00:13:26 by aelsayed          #+#    #+#             */
-/*   Updated: 2025/09/22 00:27:17 by aelsayed         ###   ########.fr       */
+/*   Created: 2025/09/22 00:29:03 by aelsayed          #+#    #+#             */
+/*   Updated: 2025/09/22 00:29:13 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
 
-#include <stdint.h>
-#include "Data.hpp"
-
-class Serializer
+class Base
 {
-	private:
-		Serializer();
-		Serializer(const Serializer&);
-		Serializer& operator=(const Serializer&);
-		~Serializer();
-
 	public:
-		static uintptr_t	serialize(Data* ptr);
-		static Data			*deserialize(uintptr_t raw);
+		virtual ~Base() {}
 };
+
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
 
 #endif
