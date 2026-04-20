@@ -57,7 +57,6 @@ void	BitcoinExchange::processInput(const char *file) const
 {
 	std::ifstream input(file);
 	std::string line;
-	int i = 2;
 
 	if (!input.is_open())
 		throw std::runtime_error("Error: could not open data file.\n");
@@ -91,7 +90,6 @@ void	BitcoinExchange::processInput(const char *file) const
 		}
 		catch (const std::exception &e)
 			{ std::cerr << "Error: " << e.what() << std::endl; }
-		i++;
 	}
 }
 
