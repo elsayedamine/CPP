@@ -6,24 +6,24 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 19:38:30 by aelsayed          #+#    #+#             */
-/*   Updated: 2026/04/22 22:54:42 by aelsayed         ###   ########.fr       */
+/*   Updated: 2026/04/22 23:14:26 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-// bool isSorted(const std::vector<int>& v)
-// {
-// 	if (v.empty())
-// 		return true;
+bool isSorted(const std::vector<int>& v)
+{
+	if (v.empty())
+		return true;
 
-// 	for (size_t i = 0; i < v.size() - 1; ++i)
-// 	{
-// 		if (v[i] > v[i + 1])
-// 			return false;
-// 	}
-// 	return true;
-// }
+	for (size_t i = 0; i < v.size() - 1; ++i)
+	{
+		if (v[i] > v[i + 1])
+			return false;
+	}
+	return true;
+}
 
 long long get_time(void)
 {
@@ -55,6 +55,7 @@ int main(int ac, char **av)
 
 		std::cout << "After:  ";
 		sorter.PrintVector(sorter.sorted);
+		std::cout << isSorted(sorter.sorted) << std::endl;
 
 		// double time_vec = static_cast<double>(end_vec - start_vec);
 		// double time_deq = static_cast<double>(end_deq - start_deq);
