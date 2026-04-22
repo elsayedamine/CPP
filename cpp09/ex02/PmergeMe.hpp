@@ -6,7 +6,7 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 19:35:51 by aelsayed          #+#    #+#             */
-/*   Updated: 2026/04/20 20:49:34 by aelsayed         ###   ########.fr       */
+/*   Updated: 2026/04/22 22:17:16 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ class PmergeMe
         ~PmergeMe();
 
 		// sorters
+		std::vector<int> GeneratePening(const std::vector<int> &, std::vector<std::pair<int, int> > &);
+		std::vector<int> GenerateIndices(int pending);
 		std::vector<int> sortVector(std::vector<int>);
 		// void sortDeque(void);
 

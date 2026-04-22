@@ -6,11 +6,24 @@
 /*   By: aelsayed <aelsayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 19:38:30 by aelsayed          #+#    #+#             */
-/*   Updated: 2026/04/20 20:50:09 by aelsayed         ###   ########.fr       */
+/*   Updated: 2026/04/22 22:54:42 by aelsayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+// bool isSorted(const std::vector<int>& v)
+// {
+// 	if (v.empty())
+// 		return true;
+
+// 	for (size_t i = 0; i < v.size() - 1; ++i)
+// 	{
+// 		if (v[i] > v[i + 1])
+// 			return false;
+// 	}
+// 	return true;
+// }
 
 long long get_time(void)
 {
@@ -32,9 +45,9 @@ int main(int ac, char **av)
 		std::cout << "Before: ";
 		sorter.PrintVector(sorter.unsorted);
 
-		long long start_vec = get_time();
-		std::vector<int> sorted_vec = sorter.sortVector(sorter.unsorted); 
-		long long end_vec = get_time();
+		// long long start_vec = get_time();
+		sorter.sortVector(sorter.unsorted); 
+		// long long end_vec = get_time();
 
 		// long long start_deq = get_time();
 		// std::deque<int> sorted_deq = sorter.sortDeque();
